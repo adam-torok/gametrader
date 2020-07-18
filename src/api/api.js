@@ -40,6 +40,7 @@ export default{
         return res.json();
     },
     loginUser(user){
+        // TODO make login authentication work, If authentication is correct, send back cookies 
         console.log(user);
         const res = fetch(API_URL_LOGINUSER,{
             method: 'POST',
