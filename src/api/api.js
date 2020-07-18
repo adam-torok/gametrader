@@ -3,6 +3,8 @@ const API_URL_INSERT = 'http://192.168.1.10:80/restapi/api/advs/insert.php';
 const API_URL_UPLOAD = 'http://192.168.1.10:80/restapi/api/advs/upload_image.php';
 const API_URL_GETSINGLE = 'http://192.168.1.10:80/restapi/api/advs/read_single.php?id=';
 const API_URL_LOGINUSER = 'http://192.168.1.10:80/restapi/api/user/login.php';
+const API_URL_REGISTRATE = 'http://192.168.1.10:80/restapi/api/user/registrate.php';
+
 
 
 export default{
@@ -23,7 +25,7 @@ export default{
     async uploadAdvertImage(image){
         var form_data = new FormData();                  
         form_data.append('advert_picture', image);
-
+        
         const response = await fetch(
             API_URL_UPLOAD,
             {
@@ -48,5 +50,14 @@ export default{
             }
         );
         return res;
+    },
+    registrateUser(user){
+        console.log(user);
+        const res = fetch(API_URL_REGISTRATE,{
+            method: 'POST',
+            "mimeType": "multipart/form-data",
+            body: JSON.stringify(user)
+            }                 
+         )
     },
 }
