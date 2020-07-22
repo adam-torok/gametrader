@@ -1,14 +1,14 @@
-const API_URL = 'http://192.168.1.10:80/restapi/api/advs/read.php';
-const API_URL_INSERT = 'http://192.168.1.10:80/restapi/api/advs/insert.php';
-const API_URL_UPLOAD = 'http://192.168.1.10:80/restapi/api/advs/upload_image.php';
-const API_URL_GETSINGLE = 'http://192.168.1.10:80/restapi/api/advs/read_single.php?id=';
-const API_URL_LOGINUSER = 'http://192.168.1.10:80/restapi/api/user/login.php';
+const API_URL = 'http://192.168.1.8:80/restapi/api/advs/read.php';
+const API_URL_INSERT = 'http://192.168.1.8:80/restapi/api/advs/insert.php';
+const API_URL_UPLOAD = 'http://192.168.1.8:80/restapi/api/advs/upload_image.php';
+const API_URL_GETSINGLE = 'http://192.168.1.8:80/restapi/api/advs/read_single.php?id=';
+const API_URL_LOGINUSER = 'http://192.168.1.8:80/restapi/api/user/login.php';
 
 
 export default{
     async fetchAdverts() {
-       const res = await fetch(API_URL);    
-       return res.json();
+    const res = await fetch(API_URL);    
+    return res.json();
     },
     async insertAdvert(advert) {
         await fetch(
