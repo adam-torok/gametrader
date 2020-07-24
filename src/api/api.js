@@ -1,17 +1,17 @@
-const API_URL = 'http://192.168.1.8:80/restapi/api/advs/read.php';
-const API_URL_INSERT = 'http://192.168.1.8:80/restapi/api/advs/insert.php';
-const API_URL_UPLOAD = 'http://192.168.1.8:80/restapi/api/advs/upload_image.php';
-const API_URL_GETSINGLE = 'http://192.168.1.8:80/restapi/api/advs/read_single.php?id=';
-const API_URL_LOGINUSER = 'http://192.168.1.8:80/restapi/api/user/login.php';
-const API_URL_REGISTRATEUSER = 'http://192.168.1.8:80/restapi/api/user/registrate.php';
-const API_NOTIFY = 'http://192.168.1.8:80/restapi/api/notifications/noti.php';
-const API_STORAGE = 'http://192.168.1.8:80/restapi/storage/';
+const API_URL = 'http://192.168.1.8:80/';
+const API_READ = API_URL +'restapi/api/advs/read.php';
+const API_URL_INSERT = API_URL +'restapi/api/advs/insert.php';
+const API_URL_UPLOAD = API_URL +'restapi/api/advs/upload_image.php';
+const API_URL_GETSINGLE = API_URL + 'restapi/api/advs/read_single.php?id=';
+const API_URL_LOGINUSER = API_URL + ' restapi/api/user/login.php';
+const API_URL_REGISTRATEUSER = API_URL + 'restapi/api/user/registrate.php';
+const API_NOTIFY = API_URL + 'restapi/api/notifications/noti.php';
+const API_STORAGE = API_URL + 'restapi/storage/';
 const APP_SINGLEADVERT = 'http://localhost:8080/singleadvert/';
-
 
 export default{
   async fetchAdverts() {
-  const res = await fetch(API_URL);    
+  const res = await fetch(API_READ);    
   return res.json();
   },
   async insertAdvert(advert) {
