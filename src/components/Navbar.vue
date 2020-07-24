@@ -34,7 +34,7 @@ export default {
 
 <style>
 .app-header{
-	position: absolute;
+	position: fixed;
     top: 0;
     width: 100%;
 }

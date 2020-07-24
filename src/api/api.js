@@ -1,5 +1,5 @@
 const API_URL = 'http://192.168.1.8:80/';
-const API_READ = API_URL +'restapi/api/advs/read.php';
+const API_READ = API_URL +'restapi/api/advs/read.php?type=';
 const API_URL_INSERT = API_URL +'restapi/api/advs/insert.php';
 const API_URL_UPLOAD = API_URL +'restapi/api/advs/upload_image.php';
 const API_URL_GETSINGLE = API_URL + 'restapi/api/advs/read_single.php?id=';
@@ -10,8 +10,9 @@ const API_STORAGE = API_URL + 'restapi/storage/';
 const APP_SINGLEADVERT = 'http://localhost:8080/singleadvert/';
 
 export default{
-  async fetchAdverts() {
-  const res = await fetch(API_READ);    
+  async fetchAdverts(console_type) {
+  const res = await fetch(API_READ + console_type);    
+  console.log(res);
   return res.json();
   },
   async insertAdvert(advert) {

@@ -1,5 +1,5 @@
 <template>
-  <LoginForm :loginUser="loginUser"></LoginForm>
+    <LoginForm :loginUser="loginUser"></LoginForm>
 </template>
 
 <script>
@@ -15,9 +15,9 @@ export default {
         }
     },
     methods:{
-        loginUser(user){
-           API.loginUser(user);
-           console.log(user);
+    loginUser(user){
+        API.loginUser(user);
+        console.log(user);
         },
     }
 }

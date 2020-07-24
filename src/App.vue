@@ -14,8 +14,8 @@ import Footer from '@/components/Footer'
 export default {
   name: 'App',
   components:{
-  Navbar,
-  Footer
+    Navbar,
+    Footer
   },
   async mounted(){
     localStorage.setItem('isNew','0');

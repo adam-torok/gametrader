@@ -21,28 +21,43 @@ export default {
   },
   data(){
     return{
+      console_type : 'Xbox',
       adverts : [],
     }
   },
   async mounted(){
-    this.adverts = await API.fetchAdverts();
+    console.log(this.console_type);
+    this.adverts = await API.fetchAdverts(this.console_type);
+  },
+  methods:{
+    changeConsoleType(console_type){
+      this.console_type = console_type;
+    }
   }
 }
 </script>
 
 <style>
 @import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.1/animate.min.css';
-
 .grid-container{
   display: grid;
   justify-content: center;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-items: center;
   align-content: center;
   margin-bottom: 45px!important;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 1200px;
 }
 .single-item-container{
   width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  .grid-container{
+  grid-template-columns: 1fr;
+  }
 }
 </style>

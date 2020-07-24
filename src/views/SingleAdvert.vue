@@ -31,7 +31,6 @@
                         <div class="mt-3">
                             <button class="bg-white text-gray-800 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-blue-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
                                 <span class="mr-2">Üzenet</span>
-                                   
                             </button>
                         </div>
                         <div class="mt-3">
@@ -40,7 +39,7 @@
                                     
                             </button>
                         </div>
-                          <div class="mt-3">
+                        <div class="mt-3">
                             <button class="bg-white text-gray-800 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-blue-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
                                 <span class="mr-2">Jelentés</span>
                             </button>
