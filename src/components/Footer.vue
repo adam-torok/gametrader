@@ -4,10 +4,10 @@
 		overflow-hidden whitespace-no-wrap text-sm transition-colors duration-100
 		ease-in-out hover:bg-green-200 focus:text-green-500"><i class="fab text-green-500 fa-xbox fa-lg"></i>
 		</router-link>
-		<router-link to="/ps" class="p-2 flex flex-col flex-grow items-center justify-center
+		<router-link to="/home" class="p-2 flex flex-col flex-grow items-center justify-center
 		overflow-hidden whitespace-no-wrap text-sm transition-colors duration-100
 		ease-in-out hover:bg-blue-200 focus:text-blue-500"><i class="text-blue-500 fab fa-playstation fa-lg"></i></router-link>
-			<router-link to="/add" class="p-2 flex flex-col flex-grow items-center justify-center
+			<router-link to="/nintendo" class="p-2 flex flex-col flex-grow items-center justify-center
 		overflow-hidden whitespace-no-wrap text-sm transition-colors duration-100
 		ease-in-out hover:bg-blue-200 focus:text-blue-500"><i class="fas text-red-600 fa-gamepad fa-lg"></i></router-link>
 

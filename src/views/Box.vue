@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <Loader :console_type="console_type"></Loader>
-    <ul class="grid-container">
-      <div class="single-item-container" v-for="advert in adverts.data" :key="advert.id">
-        <SingleItem :console_type="console_type" :advert="advert"></SingleItem>
-      </div>
-    </ul>
+  <Loader :console_type="console_type"></Loader>
+  <ul class="grid-container">
+    <div class="single-item-container" v-for="advert in adverts.data" :key="advert.id">
+    <SingleItem  :console_type="console_type" :advert="advert"></SingleItem>
+    </div>
+  </ul>
   </div>
 </template>
 
@@ -16,23 +16,23 @@ import API from '@/api/api'
 export default {
   name: 'App',
   components:{
-    SingleItem,
-    Loader
+  SingleItem,
+  Loader
   },
   data(){
-    return{
-      console_type : 'Playstation',
-      adverts : [],
-    }
+  return{
+    console_type : 'Xbox',
+    adverts : [],
+  }
   },
   async mounted(){
-    console.log(this.console_type);
-    this.adverts = await API.fetchAdverts(this.console_type);
+  console.log(this.console_type);
+  this.adverts = await API.fetchAdverts(this.console_type);
   },
   methods:{
-    changeConsoleType(console_type){
-      this.console_type = console_type;
-    }
+  changeConsoleType(console_type){
+    this.console_type = console_type;
+  }
   }
 }
 </script>

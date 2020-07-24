@@ -15,7 +15,6 @@
                         <p class="text-3xl text-gray-900">{{advert.advert_price}} Ft</p>
                         <p class="text-gray-700">{{advert.advert_desc}}</p>
                     </div>
-                   
                     <div class="px-4 pt-3 pb-4 border-t border-gray-300 bg-gray-100">
                         <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">Hirdető</div>
                         <div class="flex items-center pt-2">
@@ -30,11 +29,23 @@
                     <div class="flex items-center justify-center">
                     <router-link :to="`/singleadvert/${advert.advert_id}`"  :advert="advert">
                         <div class="m-3">
-                        <button class="bg-white text-gray-800 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-blue-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
-                        <span class="mr-2">Megtekintés</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <button v-if="isPlaystation === true" class="bg-white text-gray-800 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-blue-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">                   
+                            <span class="mr-2">Megtekintés</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
-                        </svg>
+                            </svg>
+                        </button>
+                        <button v-else-if="isNintendo === true" class="bg-white text-gray-800 font-bold rounded border-b-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">                   
+                            <span class="mr-2">Megtekintés</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                            </svg>
+                        </button>
+                        <button v-else class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">                   
+                            <span class="mr-2">Megtekintés</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                            </svg>
                         </button>
                     </div>
                     </router-link>
@@ -48,7 +59,31 @@
 <script>
 export default {
     name: 'SingleItem',
-    props:['advert'],
+    props:['advert','console_type'],
+    data(){
+        return{
+            isPlaystation : false,
+            isXbox : false,
+            isNintendo : false
+        }
+    },
+    methods:{
+        checkType(type){
+            if(type=="Playstation"){
+                this.isPlaystation = true;
+            }
+            if(type=="Xbox"){
+                this.isXbox = true;
+            }
+            if(type=="Nintendo"){
+                this.isNintendo = true;
+            }
+        }
+    },
+    mounted(){
+        this.checkType(this.console_type);
+        console.log(this.console_type);
+    }
 }
 </script>
 

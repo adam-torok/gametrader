@@ -16,7 +16,6 @@
                         <p class="text-gray-700">{{advert.data[0].advert_desc}}</p>
                         <p class="text-gray-700">Hirdetés típusa: {{advert.data[0].advert_type}}</p>
                     </div>
-                   
                     <div class="px-4 pt-3 pb-4 border-t border-gray-300 bg-gray-100">
                         <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">Hirdető</div>
                         <div class="flex items-center pt-2">

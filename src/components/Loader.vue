@@ -8,15 +8,12 @@
 <script>
 export default {
     data(){
-       return{
+        return{
             show:true,
-            ps:false,
-            xbox:false
-       }
+        }
     },
     mounted(){
         this.showToggle();
-        this.checkUrl();
     },
     methods:{
         showToggle(){
@@ -24,13 +21,6 @@ export default {
                 this.show = false;
             },2000)
         },
-        checkUrl(){
-            if(this.$route.path == "/xbox"){
-                this.xbox = true;
-            }else{
-                this.ps = true;
-            }
-        }
     }
 }
 </script>
